@@ -17,7 +17,7 @@ module VagrantPlugins
             env[:ui].info(I18n.t("vagrant_aws.already_status", :status => env[:machine].state.id))
           else
             env[:ui].info(I18n.t("vagrant_aws.stopping"))
-            server.stop(!!env[:force_halt])
+            server.destroy()
           end
 
           @app.call(env)
